@@ -85,7 +85,7 @@ function ambil($url){
         // }
         
         
-        $conn = new mysqli('localhost', 'gdarmame_suro', 'sayasuka001', 'gdarmame_bot');
+        $conn = new mysqli('localhost', 'root', '', 'gdarmame_bot');
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
          }
