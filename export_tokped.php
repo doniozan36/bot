@@ -47,10 +47,28 @@ $sheet->setTitle('sheet_1');
  $data = mysqli_query($conn,"select * from data");
  $i = 2;
 while( $r = mysqli_fetch_array($data) ){
+    $hrg=intval($r['harga_barang']);
+    switch($hrg){
+        case($hrg<=50000):
+            $hrg=$hrg+10000;
+            break;
+        case ($hrg<=100000):
+            $hrg=$hrg+15000;
+            break;
+        case($hrg<=200000):
+            $hrg=$hrg+20000;
+            break;
+        case($hrg<=300000):
+            $hrg=$hrg+30000;
+            break;
+        default:
+            $hrg=$hrg+50000;
+            break;
+    }
    $sheet->setCellValue( "A" . $i, $r['nama_barang'] );
    $sheet->setCellValue( "B" . $i, $kat );
    $sheet->setCellValue( "C" . $i, $r['detail'] );
-   $sheet->setCellValue( "D" . $i, $r['harga_barang'] );
+   $sheet->setCellValue( "D" . $i,  );
    $sheet->setCellValue( "E" . $i, $r['berat'] );
    $sheet->setCellValue( "F" . $i, '1' );
    $sheet->setCellValue( "G" . $i, $r['status'] );
