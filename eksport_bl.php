@@ -62,7 +62,7 @@ while( $r = mysqli_fetch_array($data) ){
    $sheet->setCellValue( "A" . $i, $r['nama_barang'] );
    $sheet->setCellValue( "B" . $i, $i, $r['stok'] );
    $sheet->setCellValue( "C" . $i, $r['berat'] );
-   $sheet->setCellValue( "D" . $i, $r['harga_barang'] );
+   $sheet->setCellValue( "D" . $i, $hrg );
    $sheet->setCellValue( "E" . $i, 'baru' );
    $sheet->setCellValue( "F" . $i, $r['detail'] );
    $sheet->setCellValue( "G" . $i, $asuransi );
